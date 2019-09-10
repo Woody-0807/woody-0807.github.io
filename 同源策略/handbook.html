@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>同源策略</title>
+</head>
+<body>
+<h1>同源策略</h1>
+<h2>什么是同源策略</h2>
+<p>
+  同源策略 是由 Netspace 公司提出的一种著名的安全策略。同源指的是协议、域名和端口号相同。浏览器处于安全方面的考虑，只允许同域名下的接口交互，不同源的客户端脚本，在没有明确授权的情况下，不允许读写对方的资源。
+</p>
+<h2>同源策略对 js 脚本的限制</h2>
+<ol>
+  <li>无法用 js 读取非同源的 cookie、localstorage 和 indexDB。</li>
+  <li>无法用 js 获取非同源的 DOM。</li>
+  <li>无法用 js 发送非同源的 ajax 请求。（更准确的说，js 可以向非同源的服务器发送请求，但是服务器返回的数据会被浏览器拦截。）</li>
+</ol>
+<h2>如果没有了同源策略会怎么样</h2>
+<p>
+  在没有同源策略的情况下，假设用户 A 刚刚登录了银行系统，那么登录后浏览器必然会记录下相应的 cookie 信息，这时用户 A 又去打开另外一个网站，而这网站有一个 js 代码是获取用户浏览器 cookie 信息的，而此时刚好获取到了用户 A 在某银行系统的相应信息，那么该网站就可以冒充用户为所欲为了。
+</p>
+<p>
+  由此可见，同源策略是必现的。
+</p>
+</body>
+</html>
